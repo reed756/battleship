@@ -21,8 +21,8 @@ test('Hit function amends the hitWhere property', () => {
 test("Show that ship hasn't sunk after one hit", () => {
     const newShip = ship(5);
     newShip.hit(3);
-    newShip.isSunk();
-    expect(newShip.sunk).not.toBeTruthy();
+    newShip.isSunk(newShip);
+    expect(newShip.sunk).toEqual(false);
 });
 
 test("Show that ship has sunk after three hits", () => {
@@ -30,6 +30,22 @@ test("Show that ship has sunk after three hits", () => {
     newShip.hit(3);
     newShip.hit(2);
     newShip.hit(1);
-    newShip.isSunk();
-    expect(newShip.sunk).toBeTruthy();
+    newShip.isSunk(newShip);
+    expect(newShip.sunk).toEqual(true);
+});
+
+test("Show that ship hasn't sunk after two hits", () => {
+    const newShip = ship(3);
+    newShip.hit(2);
+    newShip.hit(1);
+    newShip.isSunk(newShip);
+    expect(newShip.sunk).toEqual(false);
+});
+
+test("Show that ship has sunk after three hits", () => {
+    const newShip = ship(2);
+    newShip.hit(2);
+    newShip.hit(1);
+    newShip.isSunk(newShip);
+    expect(newShip.sunk).toEqual(true);
 });

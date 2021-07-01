@@ -1,4 +1,5 @@
 const ship = function(shipLength) {
+    
     let length = shipLength;
     let hitWhere = [];
     let sunk = false;
@@ -7,11 +8,11 @@ const ship = function(shipLength) {
         hitWhere.push(hitArea);
     }
 
-    const isSunk = () => {
+    const isSunk = (ship) => {
         if (hitWhere.length == length) {
-            return sunk = true;
-        } else {
-            return sunk = false;
+            ship.sunk = true;
+        } else if (hitWhere.length !== length) {
+            ship.sunk = false;
         }
     }
 
