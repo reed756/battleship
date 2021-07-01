@@ -1,0 +1,45 @@
+{
+  "name": "battleship",
+  "version": "1.0.0",
+  "description": "Introduction It’s time to really flex your muscles. Test Driven Development can certainly feel uncomfortable at first, but becomes more natural with practice. We’re going to implement the classic game ‘Battleship’. If you’ve never played it, or need a refresher you can read about it here and you can play an online version here.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reed756/battleship.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reed756/battleship/issues"
+  },
+  "homepage": "https://github.com/reed756/battleship#readme",
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "webpack": "^5.41.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "modulePaths": [
+        "/shared/vendor/modules"
+      ],
+      "moduleFileExtensions": [
+        "js",
+        "jsx"
+      ],
+      "moduleDirectories": [
+        "node_modules",
+        "bower_components",
+        "shared"
+      ],
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
+  },
+  "dependencies": {
+    "identity-obj-proxy": "^3.0.0"
+  }
+}
