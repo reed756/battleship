@@ -1,4 +1,4 @@
-const ship = require('./src/ship');
+const ship = require('../ship');
 
 test('Adds ship object with the following properties', () => {
   expect(ship(5)).toMatchObject({
