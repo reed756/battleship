@@ -1,3 +1,5 @@
+const ship = require("./ship");
+
 const gameboard = function() {
 
     const board = {
@@ -13,8 +15,17 @@ const gameboard = function() {
         10: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     }
 
-    const placeShip = function (game, length, startArr, startInd) {
-            game.board[startArr].splice(startInd, length, "X", "X", "X", "X", "X");
+    const placeShip = function (game, shipLength, startArr, endArr, startInd, endInd) {
+        const newShip = ship(shipLength);
+        if (startArr === endArr) {
+            for (let i = startInd; i <= endInd; i++) {
+                game.board[startArr][i] += newShip.length;
+            }
+        } else if (startArr !== endArr) {
+            for (let i = startArr; i <= endArr; i++) {
+                game.board[i][startInd] += newShip.length;
+            }
+        }
     }
 
     return { board, placeShip };
