@@ -19,17 +19,21 @@ const gameboard = function() {
         for (let i = start; i <= (shipLength + start); i++) {
             game.board[i] += shipLength;
         }
-        return game.board;
     }
 
     const placeShipVertically = function (game, shipLength, start) {
         for (let i = start; i <= ((shipLength * 10) - 10 + start) ; i += 10) {
             game.board[i] += shipLength;
         }
-        return game.board;
     }
 
-    return { board, placeShipHorizontally, placeShipVertically };
+    const receiveAttack = function (game, point) {
+        if (game.board[point] === 0) {
+            game.board[point] -= 1;
+        }
+    }
+
+    return { board, placeShipHorizontally, placeShipVertically, receiveAttack };
 }
 module.exports = gameboard;
 
