@@ -15,20 +15,21 @@ const gameboard = function() {
         0,0,0,0,0,0,0,0,0,0,
     ]
 
-    const placeShip = function (game, shipLength, start, end) {
-        const newShip = ship(shipLength);
-        if (start - end >= -0.9) {
-            for (let i = start; i <= end; i++) {
-                game.board[i] += shipLength;
-            }
-        } else if (start - end < -0.9) {
-            for (let i = start; i <= end; i+10) {
-                game.board[i] += shipLength;
-            }
+    const placeShipHorizontally = function (game, shipLength, start) {
+        for (let i = start; i <= (shipLength + start); i++) {
+            game.board[i] += shipLength;
         }
+        return game.board;
     }
 
-    return { board, placeShip };
+    const placeShipVertically = function (game, shipLength, start) {
+        for (let i = start; i <= ((shipLength * 10) - 10 + start) ; i += 10) {
+            game.board[i] += shipLength;
+        }
+        return game.board;
+    }
+
+    return { board, placeShipHorizontally, placeShipVertically };
 }
 module.exports = gameboard;
 
@@ -46,3 +47,14 @@ module.exports = gameboard;
 //     9: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 //     10: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 // }
+
+// return game.board = [0,0,0,0,5,5,5,5,5,0,
+        //     0,0,0,0,0,0,0,0,0,0,
+        //     0,0,0,0,0,0,0,0,0,0,
+        //     0,0,0,0,0,0,0,0,0,0,
+        //     0,0,0,0,0,0,0,0,0,0,
+        //     0,0,0,0,0,0,0,0,0,0,
+        //     0,0,0,0,0,0,0,0,0,0,
+        //     0,0,0,0,0,0,0,0,0,0,
+        //     0,0,0,0,0,0,0,0,0,0,
+        //     0,0,0,0,0,0,0,0,0,0]

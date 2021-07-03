@@ -1,16 +1,46 @@
 const gameboard = require('../gameboard');
+const ship = require('../ship');
 
-
-
-test('Check Ship has been placed at right coordinates for horizontal axis', () => {
+describe('arrayContaining', () => {
     const newGameBoard = gameboard();
-    newGameBoard.placeShip(newGameBoard, "one", 5, 1.2, 1.6);
-    expect(newGameBoard.board[2]).toMatchObject({
-        length: 5,
-        hitWhere: [],
-        sunk: false
+    const newShip = ship(5);
+    const expected = [0,0,0,0,5,5,5,5,5,0,
+        0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0]
+    it("Place one ship and matches where it's been put on the gameboard horizontally", () => {
+        expect(newGameBoard.placeShipHorizontally(newGameBoard, newShip.length, 4)).toEqual(expect.arrayContaining(expected));
     });
 });
+
+describe('arrayContaining', () => {
+    const newGameBoard = gameboard();
+    const newShip = ship(5);
+    const expected = [0,0,0,0,5,0,0,0,0,0,
+        0,0,0,0,5,0,0,0,0,0,
+        0,0,0,0,5,0,0,0,0,0,
+        0,0,0,0,5,0,0,0,0,0,
+        0,0,0,0,5,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0,
+        0,0,0,0,0,0,0,0,0,0]
+    it("Place one ship and matches where it's been put on the gameboard vertically", () => {
+        expect(newGameBoard.placeShipVertically(newGameBoard, newShip.length, 4)).toEqual(expect.arrayContaining(expected));
+    });
+});
+
+
+
+
+
 
 // test('Check Ship has been placed at right coordinates for vertical axis', () => {
 //     const newGameBoard = gameboard();
