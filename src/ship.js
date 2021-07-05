@@ -4,7 +4,7 @@ const ship = function(shipLength) {
     let hitWhere = [];
     let sunk = false;
 
-    const hit = hitArea => {
+    const hit = (hitArea) => {
         hitWhere.push(hitArea);
     }
 
