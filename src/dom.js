@@ -13,6 +13,10 @@ const dom = function() {
     heading.textContent = "BATTLESHIP";
     headOne.textContent = "HUMAN";
     headTwo.textContent = "COMPUTER";
+    div.classList.add('gameboards');
+    gameboards.classList.add('displays');
+    gameboardOne.classList.add('gameboard-one');
+    gameboardTwo.classList.add('gameboard-two');
 
     gameboardOne.appendChild(headOne);
     gameboardTwo.appendChild(headTwo);

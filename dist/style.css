@@ -1,0 +1,24 @@
+#content {
+    height: 100%;
+    width: 100%;
+}
+
+.gameboards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.displays {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.gameboard-one {
+    
+}
+
+.gameboard-two {
+    
+}
