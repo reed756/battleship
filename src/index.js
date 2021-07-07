@@ -1,3 +1,3 @@
-console.log('hello');
+import { dom } from "./dom.js";
 
-import { ship } from "./ship.js";
+dom();
