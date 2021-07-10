@@ -1,3 +1,3 @@
-import { dom } from "./dom.js";
+import { game } from "./game";
 
-dom();
+game();
