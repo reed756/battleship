@@ -21,7 +21,7 @@ const game = function() {
     computerBoard.placeShipHorizontally(computerBoard, computerBoard.fleet.four.length, 35);
     computerBoard.placeShipVertically(computerBoard, computerBoard.fleet.five.length, 58);
 
-    dom(humanBoard, computerBoard);
+    dom.render(humanBoard, computerBoard);
 }
 
 export { game }
