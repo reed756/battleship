@@ -15,7 +15,7 @@ describe('arrayContaining', () => {
         0,0,0,0,0,0,0,0,0,0]
     newGameBoard.placeShipHorizontally(newGameBoard, newGameBoard.fleet.five.length, 4)
     it("Place one ship and matches where it's been put on the gameboard horizontally", () => {
-        expect(newGameBoard.board).toEqual(expect.arrayContaining(expected));
+        expect(newGameBoard.board).toEqual(expected);
     });
 });
 
@@ -33,7 +33,7 @@ describe('arrayContaining', () => {
         0,0,0,0,0,0,0,0,0,0]
     newGameBoard.placeShipVertically(newGameBoard, newGameBoard.fleet.five.length, 4)
     it("Place one ship and matches where it's been put on the gameboard vertically", () => {
-        expect(newGameBoard.board).toEqual(expect.arrayContaining(expected));
+        expect(newGameBoard.board).toEqual(expected);
     });
 });
 
@@ -55,7 +55,7 @@ describe('arrayContaining', () => {
         0,0,0,4,4,4,4,0,0,0,
         0,0,0,0,0,0,0,0,0,0]
     it("Place multiple ships and matches where it's been put on the gameboard", () => {
-        expect(newGameBoard.board).toEqual(expect.arrayContaining(expected));
+        expect(newGameBoard.board).toEqual(expected);
     });
 });
 
@@ -80,7 +80,7 @@ describe('arrayContaining', () => {
         0,0,0,4,4,4,4,0,0,0,
         0,0,0,0,0,0,0,0,0,0]
     it("Check that shots show as missed on gameboard", () => {
-        expect(newGameBoard.board).toEqual(expect.arrayContaining(expected));
+        expect(newGameBoard.board).toEqual(expected);
     });
 });
 

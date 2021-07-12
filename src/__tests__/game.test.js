@@ -31,7 +31,7 @@ describe('Main game loop', () => {
         0,0,0,0,0,0,0,0,5,0,
         0,0,0,0,0,0,0,0,5,0]
 
-    it("Place one ship and matches where it's been put on the gameboard horizontally", () => {
+    it("Set up the player's game board and ships.", () => {
         humanBoard.placeShipVertically(humanBoard, humanBoard.fleet.one.length, 4);
         humanBoard.placeShipHorizontally(humanBoard, humanBoard.fleet.two.length, 11);
         humanBoard.placeShipVertically(humanBoard, humanBoard.fleet.three.length, 54);
@@ -40,12 +40,24 @@ describe('Main game loop', () => {
         expect(humanBoard.board).toEqual(expectedOne);
     });
 
-    it("Place one ship and matches where it's been put on the gameboard horizontally", () => {
+    it("Set up the computer's game board and ships.", () => {
         computerBoard.placeShipVertically(computerBoard, computerBoard.fleet.one.length, 9);
         computerBoard.placeShipHorizontally(computerBoard, computerBoard.fleet.two.length, 20);
         computerBoard.placeShipVertically(computerBoard, computerBoard.fleet.three.length, 54);
         computerBoard.placeShipHorizontally(computerBoard, computerBoard.fleet.four.length, 35);
         computerBoard.placeShipVertically(computerBoard, computerBoard.fleet.five.length, 58);
         expect(computerBoard.board).toEqual(expectedTwo);
+    });
+
+    it("hit a computer ship twice and shows as sunk.", () => {
+        computerBoard.placeShipVertically(computerBoard, computerBoard.fleet.one.length, 9);
+        computerBoard.placeShipHorizontally(computerBoard, computerBoard.fleet.two.length, 20);
+        computerBoard.placeShipVertically(computerBoard, computerBoard.fleet.three.length, 54);
+        computerBoard.placeShipHorizontally(computerBoard, computerBoard.fleet.four.length, 35);
+        computerBoard.placeShipVertically(computerBoard, computerBoard.fleet.five.length, 58);
+        computerBoard.receiveAttack(computerBoard, 20);
+        computerBoard.receiveAttack(computerBoard, 21);
+        computerBoard.fleet.two.isSunk(computerBoard.fleet.two);
+        expect(computerBoard.fleet.two.sunk).toEqual(true);
     });
 });

@@ -33,6 +33,7 @@ const dom = function(player, computer) {
         theGameBoardOne.appendChild(cellOne);
         cellOne.textContent = `${element}`;
         cellOne.classList.add('cell');
+        cellOne.setAttribute('data', `${element}`);
     });
 
     computer.board.forEach(element => {
@@ -40,6 +41,7 @@ const dom = function(player, computer) {
         theGameBoardTwo.appendChild(cellTwo);
         cellTwo.textContent = `${element}`;
         cellTwo.classList.add('cell');
+        cellTwo.setAttribute('data', `${element}`);
     });
 
     gameboards.appendChild(gameboardOne);
