@@ -40,11 +40,16 @@ const game = {
     },
 
     attack: function(point) {
-        game.human.attackBoard(game.computerBoard, point);
-        game.computer.randomAttack(game.humanBoard);
-        dom.render(game.humanBoard, game.computerBoard);
+        this.human.attackBoard(this.computerBoard, point);
+        this.computerBoard.allSunk(this.computerBoard);
+        this.computer.randomAttack(this.humanBoard);
+        dom.render(this.humanBoard, this.computerBoard);
         console.log(this.humanBoard);
         console.log(this.computerBoard);
+
+        if (this.computerBoard.allSunk(this.computerBoard) === true) {
+            console.log('Human wins!');
+        }
     }
 
 }
