@@ -1,9 +1,10 @@
-const gameboard = require("./gameboard");
+import { gameboard } from "./gameboard.js";
 import { game } from "./game.js";
 
 const dom = {
 
     render: function(player, computer) {
+
         const content = document.getElementById('content');
         const div = document.createElement('div');
         const heading = document.createElement('h1');
@@ -37,19 +38,19 @@ const dom = {
             theGameBoardOne.appendChild(cellOne);
             cellOne.textContent = `${element}`;
             cellOne.classList.add('cell');
-            cellOne.setAttribute('data', `${element}`);
         });
 
+        let i = 0;
         computer.board.forEach(element => {
             let cellTwo = document.createElement('div');
             theGameBoardTwo.appendChild(cellTwo);
             cellTwo.textContent = `${element}`;
             cellTwo.classList.add('cell');
-            cellTwo.setAttribute('data', `${element}`);
+            cellTwo.setAttribute('data', `${i}`);
             cellTwo.addEventListener('click', () => {
-                cellTwo.setAttribute('data', '-1');
-                game.loop(cellTwo.attributes.data.value);
+                game.attack(cellTwo.attributes.data.value);
             })
+            i++;
         });
 
         gameboards.appendChild(gameboardOne);

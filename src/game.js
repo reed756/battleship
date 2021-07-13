@@ -37,6 +37,14 @@ const game = {
         //         turnNo++;
         //     }
         // }
+    },
+
+    attack: function(point) {
+        game.human.attackBoard(game.computerBoard, point);
+        game.computer.randomAttack(game.humanBoard);
+        dom.render(game.humanBoard, game.computerBoard);
+        console.log(this.humanBoard);
+        console.log(this.computerBoard);
     }
 
 }
