@@ -1,4 +1,4 @@
-const ship = require("./ship");
+import { ship } from "./ship";
 
 const gameboard = function() {
 
@@ -38,7 +38,7 @@ const gameboard = function() {
     const receiveAttack = function (game, point) {
 
         if (game.board[point] === 0) {
-            game.board[point] -= 1;
+            return game.board[point] -= 1;
         } 
         
         if (game.board[point] > 0) {
@@ -95,4 +95,5 @@ const gameboard = function() {
 
     return { board, fleet, placeShipHorizontally, placeShipVertically, receiveAttack, allSunk };
 }
-module.exports = gameboard;
+
+export { gameboard }

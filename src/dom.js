@@ -1,5 +1,5 @@
 const gameboard = require("./gameboard");
-const game = require("./game.js");
+import { game } from "./game.js";
 
 const dom = {
 
@@ -14,6 +14,8 @@ const dom = {
         const gameboardTwo = document.createElement('div');
         const theGameBoardOne = document.createElement('div');
         const theGameBoardTwo = document.createElement('div');
+
+        content.innerHTML = "";
 
         heading.textContent = "BATTLESHIP";
         headOne.textContent = "HUMAN";
@@ -44,6 +46,10 @@ const dom = {
             cellTwo.textContent = `${element}`;
             cellTwo.classList.add('cell');
             cellTwo.setAttribute('data', `${element}`);
+            cellTwo.addEventListener('click', () => {
+                cellTwo.setAttribute('data', '-1');
+                game.loop(cellTwo.attributes.data.value);
+            })
         });
 
         gameboards.appendChild(gameboardOne);

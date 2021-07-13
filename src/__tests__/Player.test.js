@@ -1,5 +1,5 @@
-const gameboard = require('../gameboard');
-const Player = require('../Player');
+import { gameboard } from '../gameboard.js';
+import { Player } from "../Player";
 
 test('Shows player attacking the enemy gameboard', () => {
     const newGameBoard = gameboard();

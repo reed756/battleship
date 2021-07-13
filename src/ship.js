@@ -18,4 +18,4 @@ const ship = function(shipLength) {
 
     return { length, hitWhere, sunk, hit, isSunk};
 }
-module.exports = ship;
+export { ship }

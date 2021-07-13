@@ -1,4 +1,4 @@
-const ship = require('../ship');
+import { ship } from '../ship.js';
 
 test('Adds ship object with the following properties', () => {
   expect(ship(5)).toMatchObject({

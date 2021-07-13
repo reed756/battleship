@@ -1,5 +1,4 @@
-const gameboard = require('../gameboard');
-const ship = require('../ship');
+import { gameboard } from '../gameboard.js';
 
 describe('arrayContaining', () => {
     const newGameBoard = gameboard();
