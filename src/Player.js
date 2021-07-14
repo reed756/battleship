@@ -1,30 +1,22 @@
-import { indexOf } from "lodash";
-
 const Player = function() {
     
     const attackBoard = function(game, point) {
         return game.receiveAttack(game, point);
     }
 
-    const getRandomIntBetween = function(min, max, game) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        let finalDigit;
-        let index;
+    const getRandomIntBetween = function() {
 
-        do {
-            finalDigit = Math.floor(Math.random() * (max - min + 1)) + min;
-            index = game.board[finalDigit];
-        } 
-        // while (game.board.includes(finalDigit) === false);
-        while (game.board[index] === -1)
-
-        return finalDigit;
+    var values = [];
+    for (var i = 0; i <= 99; i++){
+        values.push(i);
+    }
+        
+    var random = values.splice(Math.random()*values.length,1)[0];
+    return random;
     }
 
     const randomAttack = function(game) {
-        var point = game.board.indexOf(getRandomIntBetween(0, 99, game));
-        // if (game.board[index] !== -1) {
+        var point = getRandomIntBetween();
         return game.receiveAttack(game, point);
     }
     // }

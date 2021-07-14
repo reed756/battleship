@@ -1,5 +1,6 @@
 import { Player } from "../Player";
 import { gameboard } from "../gameboard.js";
+import { game } from "../game.js";
 
 describe('Main game loop', () => {
 
@@ -48,16 +49,17 @@ describe('Main game loop', () => {
         computerBoard.placeShipVertically(computerBoard, computerBoard.fleet.five.length, 58);
         expect(computerBoard.board).toEqual(expectedTwo);
     });
-
-    // it("hit a computer ship twice and shows as sunk.", () => {
-    //     computerBoard.placeShipVertically(computerBoard, computerBoard.fleet.one.length, 9);
-    //     computerBoard.placeShipHorizontally(computerBoard, computerBoard.fleet.two.length, 20);
-    //     computerBoard.placeShipVertically(computerBoard, computerBoard.fleet.three.length, 54);
-    //     computerBoard.placeShipHorizontally(computerBoard, computerBoard.fleet.four.length, 35);
-    //     computerBoard.placeShipVertically(computerBoard, computerBoard.fleet.five.length, 58);
-    //     computerBoard.receiveAttack(computerBoard, 20);
-    //     computerBoard.receiveAttack(computerBoard, 21);
-    //     computerBoard.fleet.two.isSunk(computerBoard.fleet.two);
-    //     expect(computerBoard.fleet.two.sunk).toEqual(true);
-    // });
 });
+
+// test('shows ship is sunk', () => {
+//     game.computerBoard;
+//     game.computerBoard.placeShipVertically(game.computerBoard, game.computerBoard.fleet.one.length, 9);
+//     game.computerBoard.placeShipHorizontally(game.computerBoard, game.computerBoard.fleet.two.length, 20);
+//     game.computerBoard.placeShipVertically(game.computerBoard, game.computerBoard.fleet.three.length, 54);
+//     game.computerBoard.placeShipHorizontally(game.computerBoard, game.computerBoard.fleet.four.length, 35);
+//     game.computerBoard.placeShipVertically(game.computerBoard, game.computerBoard.fleet.five.length, 58);
+//     game.takeTurn(game.computerBoard, 20);
+//     game.takeTurn(game.computerBoard, 21);
+//     game.computerBoard.fleet.two.isSunk(game.computerBoard.fleet.two);
+//     expect(computerBoard.fleet.two.sunk).toEqual(true);
+// });

@@ -1,5 +1,6 @@
 import { gameboard } from "./gameboard.js";
 import { game } from "./game.js";
+import { once } from "lodash";
 
 const dom = {
 
@@ -47,9 +48,11 @@ const dom = {
             cellTwo.textContent = `${element}`;
             cellTwo.classList.add('cell');
             cellTwo.setAttribute('data', `${i}`);
-            cellTwo.addEventListener('click', () => {
-                game.takeTurn(cellTwo.attributes.data.value);
-            })
+            if (element !== -1) {
+                cellTwo.addEventListener('click', () => {
+                    game.takeTurn(cellTwo.attributes.data.value);
+                })
+            }
             i++;
         });
 
