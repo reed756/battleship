@@ -4,19 +4,22 @@ const Player = function() {
         return game.receiveAttack(game, point);
     }
 
-    const getRandomIntBetween = function() {
-
     var values = [];
     for (var i = 0; i <= 99; i++){
         values.push(i);
     }
-        
-    var random = values.splice(Math.random()*values.length,1)[0];
-    return random;
-    }
+
+    const getRandomIntBetween = function(array) {
+
+        var index = Math.floor(Math.random() * array.length);
+        var item = array[index];
+        array.splice(index, 1);
+        return item;
+    };
 
     const randomAttack = function(game) {
-        var point = getRandomIntBetween();
+        var point = getRandomIntBetween(values);
+        console.log(point);
         return game.receiveAttack(game, point);
     }
     // }
