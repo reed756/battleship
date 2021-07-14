@@ -23,22 +23,28 @@ const game = {
         game.computerBoard.placeShipHorizontally(game.computerBoard, game.computerBoard.fleet.four.length, 35);
         game.computerBoard.placeShipVertically(game.computerBoard, game.computerBoard.fleet.five.length, 58);
 
-        dom.render(game.humanBoard, game.computerBoard);
+        dom.render(this.humanBoard, this.computerBoard);
     },
 
     takeTurn: function(point) {
         this.human.attackBoard(this.computerBoard, point);
         this.computerBoard.allSunk(this.computerBoard);
+        dom.render(this.humanBoard, this.computerBoard);
         this.checkWinner();
         this.computer.randomAttack(this.humanBoard);
         this.humanBoard.allSunk(this.humanBoard);
-        dom.render(this.humanBoard, this.computerBoard);
         this.checkWinner();
     },
 
     checkWinner: function() {
         if (this.computerBoard.allSunk(this.computerBoard) === true) {
-            console.log('Human wins!');
+            this.humanBoard = new gameboard();
+            this.computerBoard = new gameboard();
+            dom.render(this.humanBoard, this.computerBoard);
+        } else if (this.humanBoard.allSunk(this.humanBoard) === true) {
+            this.humanBoard = new gameboard();
+            this.computerBoard = new gameboard();
+            dom.render(this.humanBoard, this.computerBoard);
         }
     }
 

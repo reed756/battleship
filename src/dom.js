@@ -1,6 +1,4 @@
-import { gameboard } from "./gameboard.js";
 import { game } from "./game.js";
-import { once } from "lodash";
 
 const dom = {
 
