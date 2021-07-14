@@ -48,7 +48,7 @@ const dom = {
             cellTwo.classList.add('cell');
             cellTwo.setAttribute('data', `${i}`);
             cellTwo.addEventListener('click', () => {
-                game.attack(cellTwo.attributes.data.value);
+                game.takeTurn(cellTwo.attributes.data.value);
             })
             i++;
         });

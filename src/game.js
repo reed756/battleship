@@ -26,27 +26,17 @@ const game = {
         dom.render(game.humanBoard, game.computerBoard);
     },
 
-    loop: function(point) {
-        // let turnNo = 0;
-        game.human.attackBoard(game.computerBoard, point);
-        dom.render(game.humanBoard, game.computerBoard);
-        // for (let i = 0; i < game.computerBoard.board.length; i++) {
-        // if (game.computerBoard.board[i] === -1) {
-        //         game.computerBoard.randomAttack(game.humanBoard);
-        //         dom.render(game.humanBoard, game.computerBoard);
-        //         turnNo++;
-        //     }
-        // }
-    },
-
-    attack: function(point) {
+    takeTurn: function(point) {
         this.human.attackBoard(this.computerBoard, point);
         this.computerBoard.allSunk(this.computerBoard);
+        this.checkWinner();
         this.computer.randomAttack(this.humanBoard);
+        this.humanBoard.allSunk(this.humanBoard);
         dom.render(this.humanBoard, this.computerBoard);
-        console.log(this.humanBoard);
-        console.log(this.computerBoard);
+        this.checkWinner();
+    },
 
+    checkWinner: function() {
         if (this.computerBoard.allSunk(this.computerBoard) === true) {
             console.log('Human wins!');
         }
