@@ -14,6 +14,12 @@ const dom = {
         const gameboardTwo = document.createElement('div');
         const theGameBoardOne = document.createElement('div');
         const theGameBoardTwo = document.createElement('div');
+        const inputDiv = document.createElement('div');
+        const inputOne = document.createElement('input');
+        const inputTwo = document.createElement('input');
+        const inputThree = document.createElement('input');
+        const inputFour = document.createElement('input');
+        const inputFive = document.createElement('input');
 
         content.innerHTML = "";
 
@@ -26,11 +32,23 @@ const dom = {
         gameboardTwo.classList.add('gameboard-two');
         theGameBoardOne.classList.add('thegameboard');
         theGameBoardTwo.classList.add('thegameboard');
+        inputDiv.classList.add('inputdiv');
+        inputOne.setAttribute('data', 'one');
+        inputTwo.setAttribute('data', 'two');
+        inputThree.setAttribute('data', 'three');
+        inputFour.setAttribute('data', 'four');
+        inputFive.setAttribute('data', 'five');
 
         gameboardOne.appendChild(headOne);
         gameboardTwo.appendChild(headTwo);
         gameboardOne.appendChild(theGameBoardOne);
         gameboardTwo.appendChild(theGameBoardTwo);
+        gameboardOne.appendChild(inputDiv);
+        inputDiv.appendChild(inputOne);
+        inputDiv.appendChild(inputTwo);
+        inputDiv.appendChild(inputThree);
+        inputDiv.appendChild(inputFour);
+        inputDiv.appendChild(inputFive);
 
         player.board.forEach(element => {
             let cellOne = document.createElement('div');
@@ -60,7 +78,22 @@ const dom = {
         div.appendChild(gameboards);
         content.appendChild(div);
 
-}
-}
+    },
+    setShips: function(input) {
+        const inputOne = document.querySelector('[data = "one"]');
+        const inputTwo = document.querySelector('[data = "two"]');
+        const inputThree = document.querySelector('[data = "three"]');
+        const inputFour = document.querySelector('[data = "four"]');
+        const inputFive = document.querySelector('[data = "five"]');
+
+        switch (input) {
+            case 1: return inputOne.attributes.data.value;
+            case 2: return inputTwo.attributes.data.value;
+            case 3: return inputThree.attributes.data.value;
+            case 4: return inputFour.attributes.data.value;
+            case 5: return inputFive.attributes.data.value;
+        }
+    }
+};
 
 export { dom }
