@@ -27,12 +27,14 @@ const gameboard = function() {
         for (let i = start; i < (shipLength + start); i++) {
             game.board[i] += shipLength;
         }
+        return game;
     }
 
     const placeShipVertically = function (game, shipLength, start) {
         for (let i = start; i <= ((shipLength * 10) - 10 + start) ; i += 10) {
             game.board[i] += shipLength;
         }
+        return game;
     }
 
     const receiveAttack = function (game, point) {
