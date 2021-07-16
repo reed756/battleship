@@ -24,10 +24,12 @@ const dom = {
         const brFive = document.createElement('br');
         const brSix = document.createElement('br');
         const div = document.createElement('div');
+        const heading = document.createElement('h1');
 
         content.innerHTML = "";
 
         buttonOne.textContent = "PLACE SHIPS";
+        heading.textContent = "BATTLESHIP";
         buttonOne.setAttribute('type', 'button');
         inputOne.setAttribute('type', 'number');
         inputTwo.setAttribute('type', 'number');
@@ -68,6 +70,7 @@ const dom = {
         form.appendChild(inputFive);
         form.appendChild(brSix);
         form.appendChild(buttonOne);
+        div.appendChild(heading);
         div.appendChild(form);
         content.appendChild(div);
 
