@@ -1,7 +1,6 @@
 import { Player } from "./Player.js";
 import { gameboard } from "./gameboard.js";
 import { dom } from "./dom.js";
-import { reset } from "./index.js";
 
 const game = {
 
@@ -43,17 +42,19 @@ const game = {
             dom.render(this.humanBoard, this.computerBoard);
             this.checkWinner();
         }
-        
+
     },
 
     checkWinner: function() {
         if (this.computerBoard.allSunk(this.computerBoard) === true) {
-            dom.start();
+            dom.displayWinner('You');
+            setTimeout(dom.start, 3000);
             this.humanBoard = new gameboard();
             this.computerBoard = new gameboard();
             return true;
         } else if (this.humanBoard.allSunk(this.humanBoard) === true) {
-            dom.start();
+            dom.displayWinner('Computer');
+            setTimeout(dom.start, 3000);
             this.humanBoard = new gameboard();
             this.computerBoard = new gameboard();
             return true;

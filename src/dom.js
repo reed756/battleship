@@ -83,6 +83,7 @@ const dom = {
         const div = document.createElement('div');
         const heading = document.createElement('h1');
         const gameboards = document.createElement('div');
+        const winner = document.createElement('h3');
         const headOne = document.createElement('h2');
         const headTwo = document.createElement('h2');
         const gameboardOne = document.createElement('div');
@@ -133,8 +134,14 @@ const dom = {
         gameboards.appendChild(gameboardTwo);
         div.appendChild(heading);
         div.appendChild(gameboards);
+        div.appendChild(winner);
         content.appendChild(div);
 
+    },
+
+    displayWinner: function(player) {
+        const winner = document.querySelector('h3');
+        winner.textContent = `${player} won the game!`;
     }
 };
 
