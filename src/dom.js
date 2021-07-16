@@ -4,7 +4,6 @@ const dom = {
 
     start: function() {
 
-        // const inputDiv = document.createElement('div');
         const inputOne = document.createElement('input');
         const inputTwo = document.createElement('input');
         const inputThree = document.createElement('input');
@@ -12,36 +11,65 @@ const dom = {
         const inputFive = document.createElement('input');
         const content = document.getElementById('content');
         const buttonOne = document.createElement('button');
-        // const buttonTwo = document.createElement('button');
-        // const buttonThree = document.createElement('button');
-        // const buttonFour = document.createElement('button');
-        // const buttonFive = document.createElement('button');
+        const form = document.createElement('form');
+        const labelOne = document.createElement('label');
+        const labelTwo = document.createElement('label');
+        const labelThree = document.createElement('label');
+        const labelFour = document.createElement('label');
+        const labelFive = document.createElement('label');
+        const brOne = document.createElement('br');
+        const brTwo = document.createElement('br');
+        const brThree = document.createElement('br');
+        const brFour = document.createElement('br');
+        const brFive = document.createElement('br');
+        const brSix = document.createElement('br');
+        const div = document.createElement('div');
 
-        buttonOne.textContent = "PLACE SHIP";
-        // buttonTwo.textContent = "PLACE SHIP";
-        // buttonThree.textContent = "PLACE SHIP";
-        // buttonFour.textContent = "PLACE SHIP";
-        // buttonFive.textContent = "PLACE SHIP";
+        content.innerHTML = "";
 
-        // inputDiv.classList.add('inputdiv');
-        // inputOne.setAttribute('data', 'one');
-        // inputTwo.setAttribute('data', 'two');
-        // inputThree.setAttribute('data', 'three');
-        // inputFour.setAttribute('data', 'four');
-        // inputFive.setAttribute('data', 'five');
+        buttonOne.textContent = "PLACE SHIPS";
         buttonOne.setAttribute('type', 'button');
+        inputOne.setAttribute('type', 'number');
+        inputTwo.setAttribute('type', 'number');
+        inputThree.setAttribute('type', 'number');
+        inputFour.setAttribute('type', 'number');
+        inputFive.setAttribute('type', 'number');
+        inputOne.setAttribute('min', '0');
+        inputTwo.setAttribute('min', '0');
+        inputThree.setAttribute('min', '0');
+        inputFour.setAttribute('min', '0');
+        inputFive.setAttribute('min', '0');
+        inputOne.setAttribute('max', '99');
+        inputTwo.setAttribute('max', '99');
+        inputThree.setAttribute('max', '99');
+        inputFour.setAttribute('max', '99');
+        inputFive.setAttribute('max', '99');
+        labelOne.textContent = "SHIP ONE COORDINATES";
+        labelTwo.textContent = "SHIP TWO COORDINATES";
+        labelThree.textContent = "SHIP THREE COORDINATES";
+        labelFour.textContent = "SHIP FOUR COORDINATES";
+        labelFive.textContent = "SHIP FIVE COORDINATES";
+        div.classList.add('form');
 
-        
-        content.appendChild(buttonOne);
-        content.appendChild(inputOne);
-        content.appendChild(inputTwo);
-        // inputDiv.appendChild(buttonTwo);
-        content.appendChild(inputThree);
-        // inputDiv.appendChild(buttonThree);
-        content.appendChild(inputFour);
-        // inputDiv.appendChild(buttonFour);
-        content.appendChild(inputFive);
-        // inputDiv.appendChild(buttonFive);
+        form.appendChild(brOne);
+        form.appendChild(labelOne);
+        form.appendChild(inputOne);
+        form.appendChild(brTwo);
+        form.appendChild(labelTwo);
+        form.appendChild(inputTwo);
+        form.appendChild(brThree);
+        form.appendChild(labelThree);
+        form.appendChild(inputThree);
+        form.appendChild(brFour);
+        form.appendChild(labelFour);
+        form.appendChild(inputFour);
+        form.appendChild(brFive);
+        form.appendChild(labelFive);
+        form.appendChild(inputFive);
+        form.appendChild(brSix);
+        form.appendChild(buttonOne);
+        div.appendChild(form);
+        content.appendChild(div);
 
         buttonOne.addEventListener('click', () => {
             game.setup(Number(inputOne.value), Number(inputTwo.value), Number(inputThree.value), Number(inputFour.value), Number(inputFive.value));

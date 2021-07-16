@@ -19,10 +19,9 @@ const Player = function() {
 
     const randomAttack = function(game) {
         var point = getRandomIntBetween(values);
-        console.log(point);
         return game.receiveAttack(game, point);
     }
-    // }
+
     return { attackBoard, getRandomIntBetween, randomAttack }
 }
 export { Player }
