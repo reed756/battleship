@@ -114,21 +114,33 @@ const dom = {
         player.board.forEach(element => {
             let cellOne = document.createElement('div');
             theGameBoardOne.appendChild(cellOne);
-            cellOne.textContent = `${element}`;
+            // cellOne.textContent = `${element}`;
             cellOne.classList.add('cell');
+            if (element === -1) {
+                cellOne.style.backgroundColor = "red";
+            }
+            if (element === -2) {
+                cellOne.style.backgroundColor = "darkred";
+            }
         });
 
         let i = 0;
         computer.board.forEach(element => {
             let cellTwo = document.createElement('div');
             theGameBoardTwo.appendChild(cellTwo);
-            cellTwo.textContent = `${element}`;
-            cellTwo.classList.add('cell');
+            // cellTwo.textContent = `${element}`;
+            cellTwo.classList.add('cell-click');
             cellTwo.setAttribute('data', `${i}`);
             if (element !== -1) {
                 cellTwo.addEventListener('click', () => {
                     game.takeTurn(cellTwo.attributes.data.value);
                 })
+            }
+            if (element === -1) {
+                cellTwo.style.backgroundColor = "red";
+            }
+            if (element === -2) {
+                cellTwo.style.backgroundColor = "darkred";
             }
             i++;
         });

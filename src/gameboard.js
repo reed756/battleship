@@ -45,23 +45,23 @@ const gameboard = function() {
         
         if (game.board[point] > 0) {
             if (game.board[point] === 1) {
-                game.board[point] -= 2;
+                game.board[point] -= 3;
                 game.fleet.one.hit(point);
                 return game.fleet.one;
             } else if (game.board[point] === 2) {
-                game.board[point] -= 3;
+                game.board[point] -= 4;
                 game.fleet.two.hit(point);
                 return game.fleet.two;
             } else if (game.board[point] === 3) {
-                game.board[point] -= 4;
+                game.board[point] -= 5;
                 game.fleet.three.hit(point);
                 return game.fleet.three;
             } else if (game.board[point] === 4) {
-                game.board[point] -= 5;
+                game.board[point] -= 6;
                 game.fleet.four.hit(point);
                 return game.fleet.four;
             } else if (game.board[point] === 5) {
-                game.board[point] -= 6;
+                game.board[point] -= 7;
                 game.fleet.five.hit(point);
                 return game.fleet.five;
             }
