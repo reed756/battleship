@@ -114,7 +114,6 @@ const dom = {
         player.board.forEach(element => {
             let cellOne = document.createElement('div');
             theGameBoardOne.appendChild(cellOne);
-            // cellOne.textContent = `${element}`;
             cellOne.classList.add('cell');
             if (element === -1) {
                 cellOne.style.backgroundColor = "red";
@@ -122,13 +121,15 @@ const dom = {
             if (element === -2) {
                 cellOne.style.backgroundColor = "darkred";
             }
+            if (element > 0) {
+                cellOne.style.backgroundColor = "blue";
+            }
         });
 
         let i = 0;
         computer.board.forEach(element => {
             let cellTwo = document.createElement('div');
             theGameBoardTwo.appendChild(cellTwo);
-            // cellTwo.textContent = `${element}`;
             cellTwo.classList.add('cell-click');
             cellTwo.setAttribute('data', `${i}`);
             if (element !== -1) {

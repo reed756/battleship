@@ -46,6 +46,7 @@ table {
 
 * {
     box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /* SETUP PAGE */
@@ -64,6 +65,18 @@ h1, h2, h3 {
 
 h1 {
     font-size: 100px;
+}
+
+h2 {
+    font-size: 25px;
+    text-align: center;
+    margin: 5px;
+}
+
+h3 {
+    font-size: 20px;
+    text-align: center;
+    margin: 5px;
 }
 
 label {
@@ -125,6 +138,10 @@ button:hover {
 
 .cell-click {
     cursor: pointer;
+}
+
+.cell-click:hover {
+    background-color: orange;
 }
 
 .inputdiv {
