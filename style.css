@@ -81,6 +81,7 @@ button {
     background-color: aqua;
     border: none;
     color: cadetblue;
+    cursor: pointer;
 }
 
 button:hover {
@@ -115,11 +116,15 @@ button:hover {
     width: 300px;
 }
 
-.cell {
+.cell, .cell-click {
     border: 2px solid black;
     background-color: mediumturquoise;
     width: 30px;
     height: 30px;
+}
+
+.cell-click {
+    cursor: pointer;
 }
 
 .inputdiv {
