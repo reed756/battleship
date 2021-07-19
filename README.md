@@ -1,6 +1,11 @@
 # battleship
 
+Description
+
+Here I created a Battleship game as part of The Odin Project Curriculum that can be played against the computer using Javascript, HTML, CSS, Webpack, and Jest. The main learning point for this project was to use Jest to test each module that didn't involve DOM manipulation to ensure that unit worked instead of using the console. Here is a live link to the project https://reed756.github.io/battleship/ . Also, here is the link to the repository https://github.com/reed756/battleship . 
+
 Introduction
+
 It’s time to really flex your muscles. Test Driven Development can certainly feel uncomfortable at first, but becomes more natural with practice. We’re going to implement the classic game ‘Battleship’. If you’ve never played it, or need a refresher you can read about it here and you can play an online version here.
 
 Since we’re doing TDD, it’s important that you don’t get overwhelmed. Simply take it one step at a time. Write a test, then make it pass.
